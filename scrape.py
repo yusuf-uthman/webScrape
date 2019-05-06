@@ -11,7 +11,7 @@ containers = page_soup.findAll(class_="item-info")
 file_name = "products.csv"
 f = open(file_name, "w")
 
-headers = "brand, product_name, shipping /n"
+headers = "brand, product_name, shipping \n"
 f.write(headers)
 
 for container in containers:
@@ -23,4 +23,5 @@ for container in containers:
     shipping_container = container.findAll("li", class_="price-ship")
     shipping = shipping_container[0].get_text().strip()
 
-    f.write(brand +","+ product.replace(",","|") + "," + shipping)
+    f.write(brand +","+ product.replace(",","|") + "," + shipping + "\n")
+f.close()

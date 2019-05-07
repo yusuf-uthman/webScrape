@@ -27,6 +27,6 @@ for container in containers:
     #grabs the shipping amount
     shipping_container = container.findAll("li", class_="price-ship")
     shipping = shipping_container[0].get_text().strip()
-    
+    #writes each line of product information in the file
     f.write(brand +","+ product.replace(",","|") + ","+ price + "," + shipping + "\n")
 f.close()
